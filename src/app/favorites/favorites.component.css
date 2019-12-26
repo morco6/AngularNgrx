@@ -1,0 +1,60 @@
+.fav-title {
+    color: #fff;
+    padding-top: 25px;
+}
+
+.del-icon:hover {
+    color: #48ff00;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.a {
+    grid-area: a;
+}
+
+.b {
+    grid-area: day;
+}
+
+.grid-container {
+    margin-top: 50px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    padding: 30px;
+    display: grid;
+    grid-template-areas: 'a a a a a';
+    grid-gap: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.grid-container>div {
+    height: 300px;
+    padding-top: 50px;
+    font-size: 20px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(165, 225, 255) 0%, rgb(57, 189, 255) 150%);
+    display: grid;
+    grid-template-areas: 'b' 'b' 'b';
+    transition: linear .15s;
+}
+
+.grid-container>div:hover {
+    background: radial-gradient(circle, #345579 0%, #1b1d35 150%);
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width:850px) {
+    .grid-container {
+        width: 95%;
+        grid-template-areas: 'a' 'a' 'a' 'a' 'a';
+    }
+    .grid-container>div {
+        padding-top: 10px;
+        height: 170px;
+        border-bottom: 1px solid rgb(204, 204, 204);
+    }
+}

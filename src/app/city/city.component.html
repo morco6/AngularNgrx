@@ -1,0 +1,34 @@
+<app-search></app-search>
+<div class="grid-container rounded shadow-lg">
+    <span class="bar">
+
+        <div class="fav float-right rounded shadow-lg">
+            <a href="#" (click)="addToFav(city.current_city)">
+                <i class="fas fa-heart"></i> Add to Favorites
+            </a>
+        </div>
+
+        <div class="label">
+            <div class="row">
+                <div class="col">
+                    <img style="padding-left: 15px;" src="{{city?.current_city?.icon}}">
+                </div>
+                <div class="col">
+                    {{city?.current_city?.name}}<br>
+
+                    <span *ngIf="(unit$ | async)" [innerHtml]="city?.current_city?.c"></span>
+    <span *ngIf="!(unit$ | async)" [innerHtml]="city?.current_city?.f"></span>
+</div>
+</div>
+</div>
+
+</span>
+
+<div *ngFor="let item of city?.five_days_forecast;">
+    <div>{{item.day}}</div>
+    <div><img src="{{item.icon}}"></div>
+    <div *ngIf="(unit$ | async)" [innerHtml]="item.c"></div>
+    <div *ngIf="!(unit$ | async)" [innerHtml]="item.f"></div>
+</div>
+
+</div>

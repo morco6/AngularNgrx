@@ -1,0 +1,21 @@
+<div class="gap">
+    <div class="container">
+        <div class="ng-autocomplete">
+
+            <ng-autocomplete [(ngModel)]="search" (keyup)="onKey()" [data]="locations" [searchKeyword]="keyword" placeHolder="Search City" historyIdentifier="locations" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate" #auto>
+            </ng-autocomplete>
+
+            <ng-template #itemTemplate let-item>
+                <div *ngIf="item.LocalizedName" class="item" (click)="getCurrentCity(item.Key, item.LocalizedName)">
+                    <span [innerHTML]="item.LocalizedName"></span> &nbsp; | &nbsp;
+                    <small>{{item.Country.LocalizedName}} | {{item.Country.ID}}</small>
+                </div>
+            </ng-template>
+
+            <ng-template #notFoundTemplate let-notFound>
+                <div [innerHTML]="notFound"></div>
+            </ng-template>
+        </div>
+
+    </div>
+</div>

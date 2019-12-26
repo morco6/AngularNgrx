@@ -1,0 +1,16 @@
+<div class="text-center fav-title">
+    <h2>Favorites</h2>
+    <hr> Click on item to remove
+</div>
+
+<div class="grid-container shadow-lg">
+
+    <div *ngFor="let item of favs$ | async" class="shadow-lg">
+        {{item.name}}<br>
+        <div><img src="{{item.icon}}"></div>
+        <div *ngIf="unit$ | async" [innerHtml]="item.c"></div>
+        <div *ngIf="!(unit$ | async)" [innerHtml]="item.f"></div>
+        <i class="far fa-trash-alt del-icon" (click)="removeFav(item.id)"></i>
+    </div>
+
+</div>

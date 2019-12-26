@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg">
+    <a href="#" class="navbar-brand">WeatherTask</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto">
+
+            <a routerLink="/" routerLinkActive="active" class="nav-item nav-link design-nav-link">Home</a>
+            <a routerLink="/favorites" class="nav-item nav-link design-nav-link">Favorites</a>
+            <span class="unit-toggle" (click)="unitToggle()">
+                <input type="checkbox" checked data-toggle="toggle" data-on="C" data-off="F" data-offstyle="info"
+                    data-height="25">
+            </span>
+
+        </div>
+    </div>
+</nav>

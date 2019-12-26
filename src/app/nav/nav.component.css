@@ -1,0 +1,28 @@
+.design-nav-link {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.design-nav-link:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 5px;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: #8490ff;
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+}
+
+.design-nav-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.unit-toggle {
+    padding-left: 25px;
+    padding-top: 3px;
+}

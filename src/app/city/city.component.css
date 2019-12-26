@@ -1,0 +1,116 @@
+.fav {
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 20px;
+    padding: 15px;
+    color: rgb(255, 0, 0);
+    background-color: #ffffff;
+    font-size: 18px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.9s ease;
+    transform: translateX(150px);
+}
+
+.fav:hover {
+    transform: translateX(5px);
+}
+
+.fav>a {
+    color: red;
+}
+
+.fav>a>i {
+    padding-right: 20px;
+}
+
+.label {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-left: 25px;
+    padding-top: 20px;
+    height: 100px;
+    width: 250px;
+}
+
+.bar {
+    grid-area: bg-weather;
+    padding-top: 50px;
+    color: #fff;
+    background: url('../../assets/clouds.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 200px;
+    overflow-x: hidden;
+}
+
+.sun {
+    grid-area: sun;
+}
+
+.mon {
+    grid-area: mon;
+}
+
+.tue {
+    grid-area: tue;
+}
+
+.wed {
+    grid-area: wed;
+}
+
+.thu {
+    grid-area: thu;
+}
+
+.day {
+    grid-area: day;
+}
+
+.pic {
+    grid-area: pic;
+}
+
+.heat {
+    grid-area: heat;
+}
+
+.grid-container {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    display: grid;
+    grid-template-areas: 'bg-weather bg-weather bg-weather bg-weather bg-weather' 'sun mon tue wed thu';
+    grid-gap: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.grid-container>div {
+    height: 300px;
+    padding-top: 50px;
+    font-size: 20px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(165, 225, 255) 0%, rgb(57, 189, 255) 150%);
+    display: grid;
+    grid-template-areas: 'day' 'pic' 'heat';
+}
+
+.grid-container>div:hover {
+    box-shadow: 0px 0px 20px rgba(14, 75, 133, 0.274);
+    z-index: 1000;
+}
+
+@media (max-width:850px) {
+    .grid-container {
+        width: 95%;
+        grid-template-areas: 'bg-weather' 'sun' 'mon' 'tue' 'wed' 'thu';
+    }
+    .grid-container>div {
+        padding-top: 10px;
+        height: 170px;
+        border-bottom: 1px solid rgb(204, 204, 204);
+    }
+}
